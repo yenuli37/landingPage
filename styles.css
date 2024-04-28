@@ -1,0 +1,929 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body.no-scroll {
+  overflow: hidden;
+  height: 100vh; /* Lock the height to the viewport height */
+  position: fixed; /* Optional: helps ensure the page doesn't move */
+  width: 100%; /* Ensure the body covers the full width */
+}
+
+/* navigation bar styles*/
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 26px 80px;
+  position: fixed; /* Fix position to the top of the page */
+  background-color: #6b3cc9;
+  color: white;
+  width: 100%;
+  height: 77px;
+}
+
+.logo {
+  width: 238.89px;
+  height: 25px;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+}
+
+.nav-links li {
+  padding: 0 20px;
+}
+
+.nav-links a {
+  font-family: "Inter", sans-serif;
+  font-size: 10px;
+  font-weight: 500;
+  line-height: 16.94px;
+  color: white;
+  text-decoration: none;
+  display: block;
+  width: 68px;
+  height: 17px;
+}
+.nav-links.nav-active {
+  display: flex;
+}
+
+.burger {
+  display: none;
+  cursor: pointer;
+}
+
+.burger div {
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  margin: 5px;
+  transition: all 0.3s ease;
+}
+
+/*navigation bar responsiveness*/
+
+
+@media screen and (max-width: 1200px) {
+  .nav-links {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #fff;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; /* Center the links vertically */
+    width: 100%;
+    height: 100vh; /* Take full viewport height */
+    padding-top: 60px; /* Provide space for the close icon */
+    z-index: 9; /* Ensures nav is above other content */
+    transition: all 0.5s ease;
+    color: #000;
+    display: none; /* Hidden by default */
+  }
+
+  .nav-links li {
+    padding: 20px 0;
+  }
+
+  .nav-links li a {
+    color: #000;
+    font-size: 20px;
+    font-weight: bold;
+  }
+
+  .nav-links.nav-active {
+    display: flex; /* Display as flex to center the items when active */
+  }
+
+  .burger {
+    display: block; /* Hide the burger icon in the mobile active state */
+    z-index: 10;
+  }
+
+  .burger.toggle .cross-icon {
+    display: block; /* Show the cross icon */
+  }
+
+  /* This will hide the burger lines and show the cross when the menu is active */
+  .burger.toggle .line1,
+  .burger.toggle .line2,
+  .burger.toggle .line3 {
+    display: none;
+  }
+
+  .burger {
+    display: block;
+    position: fixed;
+    top: 20px; /* Adjust as needed */
+    right: 20px; /* Adjust as needed */
+    z-index: 10; /* Ensure the burger is above other content */
+  }
+
+  .burger div {
+    background-color: white;
+    margin: 5px;
+    transition: all 0.3s ease;
+  }
+
+  .cross-icon {
+    display: none; /* The cross icon should be hidden initially */
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 11; /* Above the lines */
+    font-size: 24px; /* The size of the cross icon */
+    font-weight: bold; /* If you want the cross to be bold */
+    /* Set the color of the cross icon if it's not visible */
+    color: black; /* or any color that is visible on your navbar */
+  }
+
+  .burger .cross-icon {
+    display: none; /* The cross icon should be hidden initially */
+    position: absolute;
+    top: -3px; /* Center the cross icon */
+    right: 0;
+    z-index: 11; /* Above the lines */
+    font-size: 24px; /* The size of the cross icon */
+    font-weight: bold; /* If you want the cross to be bold */
+  }
+
+  /* When the .nav-active class is applied, it will show the cross icon */
+  .nav-links.nav-active + .burger .cross-icon {
+    display: block;
+  }
+}
+
+
+@media (max-width:768px){
+  .navbar {
+    
+    z-index: 1000;
+  }
+}
+
+@media (max-width: 400px )  {
+  .navbar {
+    
+    z-index: 1000;
+  }
+}
+/*styles for the first section*/
+
+/* Base styles */
+.hero {
+  background-image: url("bgimg.jpeg");
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  height: 660px; /* Adjust based on the actual height of your hero section */
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.typography-layout {
+  width: 622px;
+  height: 306px;
+  padding: 24px 40px 32px 40px;
+  background: linear-gradient(256.73deg, #1cbddd 27.86%, #4dca79 100%);
+  margin-left: 60px; /* Adjust this value as needed */
+  margin-top: 290px;
+  color: white; /* Assuming white text color */
+}
+
+.typography-layout h1 {
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 48px;
+  letter-spacing: -0.02em;
+  margin-bottom: 20px; /* Space between the text and the button */
+}
+
+.typography-layout button {
+  width: 214px;
+  height: 38px;
+  padding: 12px 20px;
+  border-radius: 4px 0px 0px 0px;
+  background: #f28d35;
+  border: none;
+  cursor: pointer;
+  color: white;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+/* Responsive styles for the section one */
+
+@media (max-width: 768px) {
+  
+  .hero{
+    position: relative;
+  }
+  
+
+  
+  .typography-layout {
+    position: absolute; /* Take out of document flow and position relative to .hero */
+    bottom: 0; /* Align to the bottom */
+    left: 0; /* Align to the left */
+    /* Adjust typography layout to center the text and reduce the size for smaller screens */
+    width: 100%; /* Allow it to take full width of the hero container */
+    margin: 0; /* Reset margin-top as it might not be necessary anymore */
+    height: 300px;
+    padding: 20px; /* Adjust padding to ensure text doesn't touch the edges */
+    /* Reduce the size of the heading (h1) and any other elements as needed */
+    h1 {
+      font-size: 4.5vw; /* Example responsive font size, adjust as needed */
+    }
+  }
+  
+  .typography-layout h1{
+    font-size: 50px;
+    line-height: 1.25;
+  }
+  
+
+
+  
+  
+  
+}
+
+
+
+@media (max-width: 400px) {
+  .hero {
+    position: relative; /* To position the typography layout absolutely within */
+    
+  }
+
+  .typography-layout {
+    width: 100%; /* Full width of the hero section */
+    height: 300px; /* Half the height of the hero section (660px / 2) */
+    position: absolute; /* Absolute position within the hero section */
+    bottom: 0; /* Align to the bottom */
+    left: 0; /* Align to the left */
+    margin-left: 0; /* Reset margin-left */
+    margin-top: 0; /* Reset margin-top */
+    padding: 15px 15px 0px 15px; /* Adjust padding as necessary */
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+    justify-content: center; /* Center content vertically */
+    align-items: center; /* Center content horizontally */
+  }
+
+  .typography-layout h1 {
+    font-size: 10vw; /* Responsive font size */
+    margin-bottom: 20px; /* Adjust space between text and button */
+
+  }
+
+  .typography-layout button {
+    padding: 10px 20px;
+    font-size: 3.5vw; /* Font size responsive to viewport width */
+  
+  }
+}
+/*styles for section 2*/
+
+.service-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 50px; /* Adjust as needed for spacing */
+  background: #ffffff; /* Assuming a white background */
+}
+
+.service-image {
+  background-image: url("image1.png"); /* Add the correct path */
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 500px; /* Adjust based on your actual image size */
+  height: 500px; /* Adjust based on your actual image size */
+  /* Adjust margins as necessary */
+}
+
+.service-content {
+  max-width: 507px; /* Width for larger screens */
+  margin-left: 30px; /* Space between image and text */
+}
+
+.service-content h3 {
+  font-family: "Poppins", sans-serif;
+  font-size: 27px;
+  font-weight: 600;
+  line-height: 33px;
+  color: #6b3cc9;
+  margin-bottom: 10px; /* Adjust as needed */
+}
+
+.service-content p {
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 19.36px;
+  color: #000000;
+  margin-bottom: 20px; /* Adjust as needed */
+}
+
+button {
+  padding: 12px 20px;
+  border-radius: 4px;
+  background-color: #f28d35;
+  color: white;
+  font-family: "Inter", sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  border: none;
+  cursor: pointer;
+}
+
+/* Responsive styles for second section */
+
+@media (min-width: 1201px) {
+  /* Styles for large screens, wider than 1200px */
+  .service-image {
+    width: 414px;
+    height: 414px;
+  }
+  .service-content {
+    max-width: 507px;
+  }
+}
+
+@media (max-width: 1200px) {
+  /* Styles for medium screens, between 768px and 1200px */
+  .container {
+    padding: 0 30px; /* Slightly more padding */
+  }
+  .service-image {
+    width: 342px; /* Smaller image on medium screens */
+    height: 342px;
+  }
+  .service-content h2 {
+    font-size: 23px; /* Slightly smaller font size */
+  }
+  .service-content p {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 768px) {
+  /* Styles for small screens, between 481px and 768px */
+  
+  .service-section .service-image {
+    margin-bottom: 20px; /* Space below the image */
+  }
+  .service-content {
+    text-align: left; /* Center the text for a stacked layout */
+    width:80%;
+  }
+  .service-content h2 {
+    font-size: 21px;
+  }
+  .service-content p {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 400px) {
+  .service-section {
+    flex-direction: column; /* Stack the image and content */
+    align-items: center; /* Center-align items */
+    padding: 20px; /* Adjust padding for smaller screens */
+  }
+
+  .service-image {
+    /* Adjust the order to make sure the image is above the text content */
+    order: -1;
+    /* Adjust width and height to control the size of the image container */
+    width: 80%; /* Full width of the container */
+    height: 200px; /* Height adjusted to content */
+    /* Ensure the background image is shown */
+    background-image: url('image1.png'); /* Update the path */
+    background-size: cover; /* Or cover, depending on how you want to display it */
+    background-position: center; /* Center the background image */
+    background-repeat: no-repeat; /* Do not repeat the background image */
+    margin-bottom: 20px; /* Add some margin between the image and the text */
+    display: block;
+  }
+
+  .service-content {
+    /* Ensure there's no specific styles hiding the content or altering its order */
+    order: 2; /* Explicitly place the content below the image */
+    /* Center the text for smaller screens */
+    text-align: center;
+  }
+
+  
+  .service-content h3,
+  .service-content p,
+  .service-content button {
+    /* Adjust text and button sizes for smaller screens if necessary */
+    text-align: center; /* Center-align the text for a stacked layout */
+  }
+}
+
+/* Styles for Section 3*/
+
+.container {
+  max-width: 1200px; /* Max width based on your design */
+  margin: 0 auto; /* Center the container */
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Align content and image */
+  padding: 20px; /* Padding for smaller screens */
+}
+
+.digital-strategy-section {
+  background: #fff; /* Assuming a white background */
+}
+
+.strategy-content {
+  max-width: 50%; /* Content takes up half the width of the container */
+}
+
+.strategy-content h2 {
+  font-family: "Poppins", sans-serif;
+  font-size: 27px;
+  font-weight: 600;
+  line-height: 33px;
+  color: #6b3cc9;
+  margin-bottom: 10px; /* Adjust as needed */
+}
+
+.strategy-content p {
+  font-family: "Inter", sans-serif;
+  font-size: 16px; /* Adjust as needed */
+  line-height: 1.5; /* For better readability */
+  color: #666; /* Lighter text color */
+  margin-bottom: 20px; /* Space between the paragraph and button */
+}
+
+.learn-more-button {
+  background-color: #f28d35;
+  color: white;
+  padding: 12px 24px;
+  border-radius: 4px;
+  display: inline-block;
+  text-decoration: none; /* Removes underline from the link */
+}
+
+.strategy-image {
+  background-image: url("image2.png"); /* Replace with the correct path */
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 350px; /* Adjust as needed */
+  height: 350px; /* Adjust as needed */
+}
+
+/* Responsive styles */
+@media (max-width: 1200px) {
+  /* Adjustments for smaller than 1200px */
+  .strategy-content,
+  .strategy-image {
+    max-width: 100%; /* Content and image take full width */
+    text-align: center; /* Center content */
+  }
+
+  .strategy-content {
+    order: 2; /* Content comes after the image */
+  }
+
+  .strategy-image {
+    order: 1; /* Image comes before the content */
+    margin-bottom: 20px; /* Space below the image */
+  }
+}
+
+
+@media (max-width: 768px) {
+  /* Adjustments for tablet screens */
+  .digital-strategy-section .container {
+    display: flex; /* Enables flexbox layout */
+    flex-wrap: wrap; /* Allows items to wrap to next line if space is limited */
+    justify-content: center; /* Centers the items horizontally */
+    align-items: center; /* Centers the items vertically */
+  }
+
+  .strategy-content {
+    flex: 1; /* Allows the content to grow */
+    max-width: 50%; /* Limits the width of the content to half of the container */
+    text-align: left;
+    order: 1;
+    padding-left:30px;
+    
+ 
+  }
+
+  .strategy-content h2 {
+    font-size: 22px;
+  }
+
+  .strategy-content p {
+    font-size: 14px;
+  }
+
+  .strategy-image {
+    flex: 1;
+    max-width: 50%; /* Limits the width of the image to half of the container */
+    order: 2; /* Puts the image on the left */
+    /* Specify the background image properties */
+    background-image: url('image2.png'); /* Update with your image path */
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 300px; /* Adjust the height as necessary */
+  }
+
+  
+}
+
+
+
+
+
+@media (max-width: 480px) {
+  /* Adjustments for mobile screens */
+  .container {
+    flex-direction: column; /* Stack content vertically */
+  }
+
+  .strategy-image {
+    width: 70%; /* Adjust image size for mobile */
+    margin: 0 auto 20px; /* Center the image with margin */
+  }
+}
+
+@media (max-width: 400px) {
+  /* Adjustments for very small screens */
+  .strategy-content h2 {
+    font-size: 20px; /* Even smaller font size */
+  }
+
+  .strategy-content p {
+    font-size: 15px; /* Smaller font size for readability */
+  }
+
+  .strategy-image {
+    width: 80%; /* Larger image for small screens */
+  }
+}
+
+/*Styles for faq section*/
+
+.faq-container {
+  width: 896px;
+  margin: 0 auto; /* Center the container */
+  padding-top: 28px; /* Adjust the top padding */
+}
+
+.faq-header {
+  font-family: "Poppins", sans-serif;
+  font-size: 27px;
+  font-weight: 600;
+  line-height: 33px;
+  text-align: center;
+  color: #6b3cc9;
+  margin-bottom: 30px; /* Gap between header and FAQs */
+}
+.faq-wrapper{
+  padding-bottom: 2rem;
+}
+
+.accordion {
+  background-color: #faf8ff;
+  color: #444;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-family: "Inter", sans-serif;
+  font-size: 22px;
+  font-weight: 500;
+  transition: 0.4s;
+  border-radius: 7px 0px 0px 0px;
+  margin-bottom: 13px; /* Gap between accordion buttons */
+  position: relative;
+  margin-bottom: 0;
+
+}
+
+
+.accordion-icon {
+  position: absolute;
+  right: 20px; /* Distance from the right edge of the button */
+  transition: transform 0.4s ease;
+}
+
+.accordion.active .accordion-icon {
+  transform: rotate(45deg); /* Rotates '+' to 'x' when active */
+}
+
+.active,
+.accordion:hover {
+  background-color: #ddd;
+}
+
+.panel {
+  padding: 0 18px;
+  background-color: FAF8FF;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+  font-family: "Inter", sans-serif;
+  font-size: 18px;
+  line-height: 30px;
+  border-radius: 0 0 7px 7px;
+  margin-bottom: 0;
+}
+
+/* CSS code */
+.accordion.active,
+.accordion.active .accordion-icon {
+  color: purple;
+}
+
+.panel p {
+  color: purple; /* Set the text color of the panel content to purple */
+}
+
+/* Responsive styles for faq section*/
+@media (max-width: 1200px) {
+  .faq-container {
+    width: 100%;
+    padding: 20px;
+  }
+
+  .faq-header {
+    text-align: center;
+  }
+
+  .accordion {
+    font-size: 20px; /* Smaller font for accordion on smaller screens */
+  }
+
+  .panel p {
+    font-size: 16px; /* Smaller font for panel content on smaller screens */
+  }
+}
+
+/* Adjustments for tablet screens (up to 768px wide) */
+@media (max-width: 768px) {
+  .faq-container {
+    max-width: 80%; /* Set the desired max-width */
+    margin: auto; /* Center the container */
+    align-items: center;
+  }
+
+  
+
+  
+
+  /* If accordion title needs to be full width within container including the button */
+  .accordion {
+    display: flex; /* Use flexbox to align title and button */
+    justify-content: space-between; /* Space between title and button */
+    align-items: center;
+    padding: 1rem; 
+    /* Add padding inside the accordion for spacing */
+  }
+
+  /* Adjustments for the panel's content */
+  .panel {
+    padding: 0.6rem; /* Add padding inside the panel for spacing */
+  }
+
+  /* You might also need to adjust font sizes if necessary */
+  .accordion h3, .panel p {
+    font-size: smaller; /* Example, adjust as needed */
+  }
+
+  .panel p {
+    font-size: 16px; /* Keep readable font size for tablet screens */
+  }
+}
+
+/* Adjustments for mobile screens (up to 480px wide) */
+@media (max-width: 480px) {
+  .faq-container {
+    padding: 15px; /* More padding than for tablets to use space wisely */
+  }
+
+  .faq-header {
+    font-size: 22px; /* Even smaller font size for mobile screens */
+    text-align: center; /* Center-align the FAQ header */
+  }
+
+  .accordion {
+    font-size: 16px; /* Further reduce the font size for mobile readability */
+    padding: 14px; /* Adjust padding for the smaller screen */
+  }
+
+  .panel {
+    padding: 0 14px; /* Match left/right padding to that of the accordion for consistency */
+  }
+
+  .panel p {
+    font-size: 14px; /* Smaller text in the content panels for readability on mobile */
+  }
+}
+
+/*styles for the footer*/
+.site-footer {
+  background: #6b3cc9;
+  color: white;
+  padding: 20px 0;
+  font-family: "Inter", sans-serif;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  max-width: 1200px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+  padding: 0 15px;
+}
+
+.footer-brand,
+.footer-links {
+  flex: 1; /* Assign flex-grow value to each column */
+  min-width: 250px; /* Give a minimum width to each column */
+}
+
+.footer-brand {
+  order: 1;
+  margin-bottom: 20px; /* Provide bottom margin for stacking */
+}
+
+.footer-brand .footer-logo {
+  font-size: 2em; /* Larger logo size */
+  font-weight: bold;
+  color: white;
+  text-decoration: none;
+  margin-bottom: 10px; /* Space between logo and text */
+}
+
+.footer-brand p {
+  font-size: 1rem; /* Adjust font size as necessary */
+  margin-bottom: 30px; /* Space after the paragraph */
+}
+
+/* Container for the footer links */
+.footer-links {
+  flex: 2; /* The links take up twice as much space as the brand and legal */
+  display: flex;
+  justify-content: space-around; /* Evenly space the internal link columns */
+  order: 2; /* Ensure that the footer links are second */
+}
+
+.footer-links .footer-column {
+  margin-right: 20px; /* Spacing between columns */
+}
+.footer-column {
+  display: flex;
+  flex-direction: column; /* Stack items vertically */
+  align-items: center; /* Center-align items */
+}
+
+.footer-column h4 {
+  margin-bottom: 20px;
+}
+
+.footer-column ul {
+  list-style-type: none;
+  padding: 0;
+  text-align: center; /* Center-align the list text */
+}
+
+.footer-column ul li {
+  padding: 5px 0; /* Space between list items */
+}
+
+/* Styling for legal section */
+.footer-legal {
+  width: 100%; /* Legal takes full width */
+  text-align: center;
+  order: 3; /* Pushes the legal section to the bottom */
+  border-top: 1px solid white;
+  padding-top: 20px; /* Space above the legal links */
+  margin-top: 20px; /* Space between the links and the above content */
+}
+
+.footer-legal a{
+  color: white;
+  text-decoration: none;
+  padding-right: 20px;
+  padding-left: 20px;
+  
+}
+/* Responsive Styles for the footer */
+@media (max-width: 768px) {
+
+  .footer-container {
+    flex-direction: column;
+    align-items: flex-start; /* Aligns footer items to the start, which is the left side */
+  }
+
+
+  .footer-brand{
+    width: 100%;
+    padding-left: 20px;
+  }
+
+  .footer-links {
+    display: flex;
+    justify-content: space-between; /* This will create spacing between the columns */
+    align-items: flex-start;
+    width:80%;
+    padding-left:20px;
+  }
+
+  /* Make sure lists in footer-column have no left padding to align with the headers */
+  .footer-column ul {
+    padding-left: 0;
+  }
+
+  /* Align the headers to the left */
+  .footer-column h4 {
+    text-align: left;
+  }
+}
+
+
+
+@media (max-width: 400px) {
+  /* Reset margins and paddings */
+  ul, p, h4, a {
+    margin: 0;
+    padding: 0;
+  }
+
+  /* Align the entire footer container's content to the left */
+  .footer-container {
+    align-items: flex-start;
+    padding: 15px; /* This padding is to ensure some space on the side */
+  }
+
+  /* Align the footer brand/logo section to the left */
+  .footer-brand {
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  /* Align the footer logo and paragraph to the left with the proper padding */
+  .footer-brand .footer-logo, 
+  .footer-brand p {
+    padding-left: 10px; /* Adjust if you want some space from the left edge */
+  }
+
+  /* Align the footer links sections to the left */
+  .footer-links {
+    width: 100%;
+  }
+
+  /* Ensure the footer columns and their children (h4 and ul) are aligned to the left */
+  .footer-links .footer-column,
+  .footer-links .footer-column h4,
+  .footer-links .footer-column ul {
+    text-align: left;
+    padding-left: 10px; /* Adjust if you want some space from the left edge */
+    align-items: flex-start;
+  }
+
+  /* Ensure each list item is full-width with left alignment */
+  .footer-links .footer-column ul li {
+    text-align: left;
+    display: block; /* Make each list item block to take the full width */
+  }
+
+  /* Align the footer legal section and its children to the left */
+  .footer-legal {
+    text-align: left;
+    padding-left: 10px; /* Adjust if you want some space from the left edge */
+    width: 100%;
+  }
+
+  /* Ensure links within the footer legal section are also aligned */
+  .footer-legal a,
+  .footer-legal span {
+    text-align: left;
+  }
+
+  /* To ensure the pipe symbol '|' is spaced evenly between the links */
+  .footer-legal span {
+    display: inline-block;
+    margin: 0 5px;
+  }
+}
