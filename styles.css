@@ -122,8 +122,8 @@ body.no-scroll {
   .burger {
     display: block;
     position: fixed;
-    top: 20px; /* Adjust as needed */
-    right: 20px; /* Adjust as needed */
+    top: 20px; 
+    right: 20px; 
     z-index: 10; /* Ensure the burger is above other content */
   }
 
@@ -140,9 +140,8 @@ body.no-scroll {
     right: 0;
     z-index: 11; /* Above the lines */
     font-size: 24px; /* The size of the cross icon */
-    font-weight: bold; /* If you want the cross to be bold */
-    /* Set the color of the cross icon if it's not visible */
-    color: black; /* or any color that is visible on your navbar */
+    font-weight: bold; 
+    color: black; 
   }
 
   .burger .cross-icon {
@@ -183,7 +182,7 @@ body.no-scroll {
   background-size: cover;
   background-position: center;
   width: 100%;
-  height: 660px; /* Adjust based on the actual height of your hero section */
+  height: 660px; 
   display: flex;
   align-items: center;
   justify-content: flex-start;
@@ -194,9 +193,9 @@ body.no-scroll {
   height: 306px;
   padding: 24px 40px 32px 40px;
   background: linear-gradient(256.73deg, #1cbddd 27.86%, #4dca79 100%);
-  margin-left: 60px; /* Adjust this value as needed */
+  margin-left: 60px; 
   margin-top: 290px;
-  color: white; /* Assuming white text color */
+  color: white; 
 }
 
 .typography-layout h1 {
@@ -234,14 +233,13 @@ body.no-scroll {
     position: absolute; /* Take out of document flow and position relative to .hero */
     bottom: 0; /* Align to the bottom */
     left: 0; /* Align to the left */
-    /* Adjust typography layout to center the text and reduce the size for smaller screens */
     width: 100%; /* Allow it to take full width of the hero container */
     margin: 0; /* Reset margin-top as it might not be necessary anymore */
     height: 300px;
     padding: 20px; /* Adjust padding to ensure text doesn't touch the edges */
-    /* Reduce the size of the heading (h1) and any other elements as needed */
+    /* Reduce the size of the heading (h1) and any other elements  */
     h1 {
-      font-size: 4.5vw; /* Example responsive font size, adjust as needed */
+      font-size: 4.5vw; /* Example responsive font size */
     }
   }
   
@@ -281,7 +279,7 @@ body.no-scroll {
 
   .typography-layout h1 {
     font-size: 10vw; /* Responsive font size */
-    margin-bottom: 20px; /* Adjust space between text and button */
+    margin-bottom: 20px; 
 
   }
 
@@ -297,17 +295,17 @@ body.no-scroll {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 50px; /* Adjust as needed for spacing */
+  padding: 50px; 
   background: #ffffff; /* Assuming a white background */
 }
 
 .service-image {
-  background-image: url("image1.png"); /* Add the correct path */
+  background-image: url("image1.png"); 
   background-size: contain;
   background-repeat: no-repeat;
-  width: 500px; /* Adjust based on your actual image size */
-  height: 500px; /* Adjust based on your actual image size */
-  /* Adjust margins as necessary */
+  width: 500px; 
+  height: 500px;
+ 
 }
 
 .service-content {
@@ -321,7 +319,7 @@ body.no-scroll {
   font-weight: 600;
   line-height: 33px;
   color: #6b3cc9;
-  margin-bottom: 10px; /* Adjust as needed */
+  margin-bottom: 10px; 
 }
 
 .service-content p {
@@ -330,7 +328,7 @@ body.no-scroll {
   font-weight: 400;
   line-height: 19.36px;
   color: #000000;
-  margin-bottom: 20px; /* Adjust as needed */
+  margin-bottom: 20px; 
 }
 
 button {
@@ -361,14 +359,14 @@ button {
 @media (max-width: 1200px) {
   /* Styles for medium screens, between 768px and 1200px */
   .container {
-    padding: 0 30px; /* Slightly more padding */
+    padding: 0 30px; 
   }
   .service-image {
     width: 342px; /* Smaller image on medium screens */
     height: 342px;
   }
   .service-content h2 {
-    font-size: 23px; /* Slightly smaller font size */
+    font-size: 23px; 
   }
   .service-content p {
     font-size: 14px;
@@ -406,9 +404,9 @@ button {
     /* Adjust width and height to control the size of the image container */
     width: 80%; /* Full width of the container */
     height: 200px; /* Height adjusted to content */
-    /* Ensure the background image is shown */
-    background-image: url('image1.png'); /* Update the path */
-    background-size: cover; /* Or cover, depending on how you want to display it */
+   
+    background-image: url('image1.png'); 
+    background-size: cover;
     background-position: center; /* Center the background image */
     background-repeat: no-repeat; /* Do not repeat the background image */
     margin-bottom: 20px; /* Add some margin between the image and the text */
@@ -416,7 +414,6 @@ button {
   }
 
   .service-content {
-    /* Ensure there's no specific styles hiding the content or altering its order */
     order: 2; /* Explicitly place the content below the image */
     /* Center the text for smaller screens */
     text-align: center;
@@ -426,7 +423,7 @@ button {
   .service-content h3,
   .service-content p,
   .service-content button {
-    /* Adjust text and button sizes for smaller screens if necessary */
+    
     text-align: center; /* Center-align the text for a stacked layout */
   }
 }
@@ -434,7 +431,7 @@ button {
 /* Styles for Section 3*/
 
 .container {
-  max-width: 1200px; /* Max width based on your design */
+  max-width: 1200px; 
   margin: 0 auto; /* Center the container */
   display: flex;
   align-items: center;
@@ -456,13 +453,13 @@ button {
   font-weight: 600;
   line-height: 33px;
   color: #6b3cc9;
-  margin-bottom: 10px; /* Adjust as needed */
+  margin-bottom: 10px; 
 }
 
 .strategy-content p {
   font-family: "Inter", sans-serif;
-  font-size: 16px; /* Adjust as needed */
-  line-height: 1.5; /* For better readability */
+  font-size: 16px; 
+  line-height: 1.5; 
   color: #666; /* Lighter text color */
   margin-bottom: 20px; /* Space between the paragraph and button */
 }
@@ -480,8 +477,8 @@ button {
   background-image: url("image2.png"); /* Replace with the correct path */
   background-size: contain;
   background-repeat: no-repeat;
-  width: 350px; /* Adjust as needed */
-  height: 350px; /* Adjust as needed */
+  width: 350px; 
+  height: 350px; 
 }
 
 /* Responsive styles */
@@ -535,12 +532,12 @@ button {
     flex: 1;
     max-width: 50%; /* Limits the width of the image to half of the container */
     order: 2; /* Puts the image on the left */
-    /* Specify the background image properties */
-    background-image: url('image2.png'); /* Update with your image path */
+   
+    background-image: url('image2.png');
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
-    height: 300px; /* Adjust the height as necessary */
+    height: 300px; 
   }
 
   
@@ -647,7 +644,7 @@ button {
   margin-bottom: 0;
 }
 
-/* CSS code */
+
 .accordion.active,
 .accordion.active .accordion-icon {
   color: purple;
@@ -695,7 +692,7 @@ button {
     justify-content: space-between; /* Space between title and button */
     align-items: center;
     padding: 1rem; 
-    /* Add padding inside the accordion for spacing */
+    
   }
 
   /* Adjustments for the panel's content */
@@ -703,9 +700,9 @@ button {
     padding: 0.6rem; /* Add padding inside the panel for spacing */
   }
 
-  /* You might also need to adjust font sizes if necessary */
+ 
   .accordion h3, .panel p {
-    font-size: smaller; /* Example, adjust as needed */
+    font-size: smaller; 
   }
 
   .panel p {
@@ -776,16 +773,16 @@ button {
 }
 
 .footer-brand p {
-  font-size: 1rem; /* Adjust font size as necessary */
+  font-size: 1rem; 
   margin-bottom: 30px; /* Space after the paragraph */
 }
 
 /* Container for the footer links */
 .footer-links {
-  flex: 2; /* The links take up twice as much space as the brand and legal */
+  flex: 2; 
   display: flex;
-  justify-content: space-around; /* Evenly space the internal link columns */
-  order: 2; /* Ensure that the footer links are second */
+  justify-content: space-around; 
+  order: 2; 
 }
 
 .footer-links .footer-column {
@@ -850,12 +847,12 @@ button {
     padding-left:20px;
   }
 
-  /* Make sure lists in footer-column have no left padding to align with the headers */
+ 
   .footer-column ul {
     padding-left: 0;
   }
 
-  /* Align the headers to the left */
+  
   .footer-column h4 {
     text-align: left;
   }
@@ -864,7 +861,7 @@ button {
 
 
 @media (max-width: 400px) {
-  /* Reset margins and paddings */
+  
   ul, p, h4, a {
     margin: 0;
     padding: 0;
@@ -885,10 +882,10 @@ button {
   /* Align the footer logo and paragraph to the left with the proper padding */
   .footer-brand .footer-logo, 
   .footer-brand p {
-    padding-left: 10px; /* Adjust if you want some space from the left edge */
+    padding-left: 10px;
   }
 
-  /* Align the footer links sections to the left */
+
   .footer-links {
     width: 100%;
   }
@@ -898,11 +895,11 @@ button {
   .footer-links .footer-column h4,
   .footer-links .footer-column ul {
     text-align: left;
-    padding-left: 10px; /* Adjust if you want some space from the left edge */
+    padding-left: 10px; 
     align-items: flex-start;
   }
 
-  /* Ensure each list item is full-width with left alignment */
+  
   .footer-links .footer-column ul li {
     text-align: left;
     display: block; /* Make each list item block to take the full width */
@@ -911,7 +908,7 @@ button {
   /* Align the footer legal section and its children to the left */
   .footer-legal {
     text-align: left;
-    padding-left: 10px; /* Adjust if you want some space from the left edge */
+    padding-left: 10px;
     width: 100%;
   }
 
