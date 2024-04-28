@@ -9,23 +9,18 @@ burger.addEventListener("click", function () {
   body.classList.toggle("no-scroll");
 });
 
-// // Optional: Consider adding this if you want to close the menu by clicking the cross icon
-// crossIcon.addEventListener("click", function () {
-//   navLinks.classList.remove("nav-active");
-//   burger.classList.remove("toggle");
-//   body.classList.remove("no-scroll");
-// });
+
 
 
 function getConsultation() {
-  // You can redirect to a consultation form or open a modal, etc.
-  window.location.href = "#"; // Replace '#' with the link to your contact form or modal script
+  
+  window.location.href = "#"; 
 }
 
 function learnMore() {
   // Functionality when 'Learn More' button is clicked
   alert("Navigate to the 'Learn More' page");
-  // Replace above line with the actual navigation or modal opening code
+  
 }
 
 document.addEventListener("DOMContentLoaded", function () {
